@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    pg (1.4.4)
+    sequel (5.61.0)
+
+PLATFORMS
+  arm64-darwin-21
+
+DEPENDENCIES
+  pg
+  sequel
+
+BUNDLED WITH
+   2.3.22

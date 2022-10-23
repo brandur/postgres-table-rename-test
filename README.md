@@ -35,7 +35,9 @@ A small demo to show how to safely rename a table in Postgres even while having 
 
 ## Limitations of updatable views
 
-1. Stop both `app.rb` processes from the first section.
+Updatable views are great, but they're not magic, and come with [some limitations](https://www.postgresql.org/docs/current/sql-createview.html#SQL-CREATEVIEW-UPDATABLE-VIEWS). Most importantly for our purposes here is that if the original table's schema changes enough that the fields in the view no longer make a complete record, we can no longer insert to it through the view. For example, a `NOT NULL` column without a `DEFAULT` is added.
+
+1. Stop both `app.rb` processes from the section above.
 
 2. Run migration that adds a new `NOT NULL` column to `sprocket` called `material`:
 
